@@ -1,24 +1,46 @@
 import org.junit.*;
 import static org.junit.Assert.*;
-
 import org.junit.runner.RunWith;
+
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.api.mockito.PowerMockito;
+
+import static org.powermock.api.mockito.PowerMockito.mockStatic;
+import static org.powermock.api.mockito.PowerMockito.mock;
+import static org.powermock.api.mockito.PowerMockito.when;
+import static org.powermock.api.mockito.PowerMockito.doAnswer;
+
+import org.mockito.stubbing.Answer;
+import org.mockito.invocation.InvocationOnMock;
+import static org.mockito.Matchers.anyString;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(Config.class)
+@PrepareForTest(DiskLogger.class)
 public class HikerTest {
 
     @Test
     public void life_the_universe_and_everything() {
-        PowerMockito.mockStatic(Config.class);
-        Config mocked = PowerMockito.mock(Config.class);
-        PowerMockito.when(Config.getInstance()).thenReturn(mocked);
-        PowerMockito.when(mocked.getMultiplier()).thenReturn(9);
+        FakeLogger fakeLog = new FakeLogger();
+        use(fakeLog);
 
         int expected = 42;
         int actual = new Hiker().answer();
         assertEquals(expected, actual);
+
+        assertTrue(fakeLog.endsWith("The answer is 6 * 7"));
+    }
+
+    private void use(FakeLogger fake) {
+        mockStatic(DiskLogger.class);
+        DiskLogger mocked = mock(DiskLogger.class);
+        when(DiskLogger.getInstance()).thenReturn(mocked);
+
+        doAnswer(new Answer<Void>() {
+            public Void answer(InvocationOnMock invocation) {
+              String line = (String)invocation.getArguments()[0];
+              fake.log(line); // <====
+              return null;
+            }
+        }).when(mocked).log(anyString());  // <====
     }
 }

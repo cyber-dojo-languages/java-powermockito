@@ -4,8 +4,9 @@
 
   "visible_filenames": [
     "HikerTest.java",
-    "Config.java",
     "Hiker.java",
+    "FakeLogger.java",
+    "DiskLogger.java",
     "cyber-dojo.sh"
   ],
 
