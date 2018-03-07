@@ -4,12 +4,7 @@ import org.junit.runner.RunWith;
 
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.core.classloader.annotations.PrepareForTest;
-
-import static org.powermock.api.mockito.PowerMockito.mockStatic;
-import static org.powermock.api.mockito.PowerMockito.mock;
-import static org.powermock.api.mockito.PowerMockito.when;
-import static org.powermock.api.mockito.PowerMockito.doAnswer;
-
+import static org.powermock.api.mockito.PowerMockito.*;
 import org.mockito.stubbing.Answer;
 import org.mockito.invocation.InvocationOnMock;
 import static org.mockito.Matchers.anyString;
