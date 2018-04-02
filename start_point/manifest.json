@@ -12,7 +12,7 @@
 
   "image_name": "cyberdojofoundation/java_powermockito",
 
-  "filename_extension" : ".java",
+  "filename_extension": ".java",
 
   "runner_choice": "stateless"
 }
