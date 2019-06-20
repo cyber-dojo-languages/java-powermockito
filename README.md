@@ -1,5 +1,5 @@
 
-[![CircleCI](https://circleci.com/gh/cyber-dojo-languages/java-powermockito.svg?style=svg)](https://circleci.com/gh/cyber-dojo-languages/java-power§mockito)
+[![CircleCI](https://circleci.com/gh/cyber-dojo-languages/java-powermockito.svg?style=svg)](https://circleci.com/gh/cyber-dojo-languages/java-powermockito)
 
 # display_name="Java, PowerMockito"
 # image_name="cyberdojofoundation/java_powermockito"
