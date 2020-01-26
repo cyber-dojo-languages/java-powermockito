@@ -22,7 +22,7 @@ public class HikerTest {
         int actual = new Hiker().answer();
         assertEquals(expected, actual);
 
-        assertTrue(fakeLog.endsWith("The answer is Six * Nine"));
+        assertTrue(fakeLog.endsWith("The answer is 6 * 7"));
     }
 
     private void use(FakeLogger fake) {
