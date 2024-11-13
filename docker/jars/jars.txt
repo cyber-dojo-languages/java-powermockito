@@ -1,0 +1,19 @@
+This file contains the locations to download the relevent .jar files
+Current version in parentheses
+
+** Newer versions of mockito-core (4.x up) do not seem to work with powermockito
+
+(1.15.4)    https://mvnrepository.com/artifact/net.bytebuddy/byte-buddy
+(1.15.4)    https://mvnrepository.com/artifact/net.bytebuddy/byte-buddy-agent
+(3.3.0)     https://mvnrepository.com/artifact/cglib/cglib-nodep
+(3.0)       https://mvnrepository.com/artifact/org.hamcrest/hamcrest
+(3.30.2-GA) https://mvnrepository.com/artifact/org.javassist/javassist
+(4.13.2)    https://mvnrepository.com/artifact/junit/junit
+(3.12.4)**  https://mvnrepository.com/artifact/org.mockito/mockito-core
+(3.4)       https://mvnrepository.com/artifact/org.objenesis/objenesis
+(2.0.9)     https://mvnrepository.com/artifact/org.powermock/powermock-api-mockito2
+(2.0.9)     https://mvnrepository.com/artifact/org.powermock/powermock-api-support
+(2.0.9)     https://mvnrepository.com/artifact/org.powermock/powermock-core
+(2.0.9)     https://mvnrepository.com/artifact/org.powermock/powermock-module-junit4
+(2.0.9)     https://mvnrepository.com/artifact/org.powermock/powermock-module-junit4-common
+(2.0.9)     https://mvnrepository.com/artifact/org.powermock/powermock-reflect
