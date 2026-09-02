@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Declares only the libraries a kata names directly. Everything else they
+     drag in (javassist, byte-buddy, objenesis and the rest of PowerMock) is
+     resolved from here rather than listed, so the set of jars in the image is
+     consistent by construction instead of by somebody keeping a list in step
+     by hand.
+
+     Most versions below are a starting point, not the versions installed:
+     install_jars.sh moves each to its newest release before resolving. The one
+     exception is mockito-core, and it is named in that script so it stays put. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.cyber-dojo</groupId>
+  <artifactId>java-powermockito-jars</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-api-mockito2</artifactId>
+      <version>2.0.9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-module-junit4</artifactId>
+      <version>2.0.9</version>
+    </dependency>
+    <!-- Held at 3.x. powermock-api-mockito2 binds to Mockito's internals, and
+         those moved in Mockito 4; with a newer one the mocking simply does not
+         work. install_jars.sh excludes this from the version bump. -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>3.12.4</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+    </dependency>
+    <!-- Named rather than left to JUnit to supply. JUnit 4 brings only
+         hamcrest-core, and a kata reaching for a matcher beyond the core ones
+         would not find it. -->
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest</artifactId>
+      <version>3.0</version>
+    </dependency>
+  </dependencies>
+
+</project>
