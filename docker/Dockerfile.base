@@ -5,7 +5,7 @@
 # warns about and has said it will remove. cyber-dojo.sh silences the warning
 # rather than showing a learner something they did not cause; when a JDK finally
 # removes it, this image is the thing that has to change.
-FROM ghcr.io/cyber-dojo-languages/java:5c97081
+FROM ghcr.io/cyber-dojo-languages/java:7d1eb76
 LABEL maintainer=jon@jaggersoft.com
 
 ENV CLASSPATH=/powermockito/
